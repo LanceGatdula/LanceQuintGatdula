@@ -1,36 +1,36 @@
-let menu = document.querySelector('#menu-bars');
-let header = document.querySelector('header');
-
-menu.onclick = () =>{
-    menu.classList.toggle('fa-times');
-    header.classList.toggle('active');
+function formValidation()
+{
+var uid = document.registration.userid;
+var passid = document.registration.passid;
+var uname = document.registration.username;
+var uadd = document.registration.address;
+var ucountry = document.registration.country;
+var uzip = document.registration.zip;
+var uemail = document.registration.email;
+var umsex = document.registration.msex;
+var ufsex = document.registration.fsex; if(userid_validation(uid,5,12))
+{
+if(passid_validation(passid,7,12))
+{
+if(allLetter(uname))
+{
+if(alphanumeric(uadd))
+{ 
+if(countryselect(ucountry))
+{
+if(allnumeric(uzip))
+{
+if(ValidateEmail(uemail))
+{
+if(validsex(umsex,ufsex))
+{
 }
-
-window.onscroll = () =>{
-    menu.classList.remove('fa-times');
-    header.classList.remove('active');
+} 
 }
-
-let cursor1 = document.querySelector('.cursor-1');
-let cursor2 = document.querySelector('.cursor-2');
-
-window.onmousemove = (e) =>{
-    cursor1.style.top = e.pageY + 'px';
-    cursor1.style.left = e.pageX + 'px';
-    cursor2.style.top = e.pageY + 'px';
-    cursor2.style.left = e.pageX + 'px';
+} 
 }
-
-document.querySelectorAll('a').forEach(links =>{
-
-    links.onmouseenter = () =>{
-        cursor1.classList.add('active');
-        cursor2.classList.add('active');
-    }
-
-    links.onmouseleave = () =>{
-        cursor1.classList.remove('active');
-        cursor2.classList.remove('active');
-    }
-
-});
+}
+}
+}
+return false;
+}
